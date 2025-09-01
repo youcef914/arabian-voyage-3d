@@ -1,7 +1,7 @@
 import { AnimatePresence } from 'framer-motion';
 import { useAppStore } from '@/lib/store';
 import StartHero from '@/components/StartHero';
-import Map3D from '@/components/Map3D';
+import RealMapArab from '@/components/RealMapArab';
 import CountrySidebar from '@/components/CountrySidebar';
 import LoadingScreen from '@/components/LoadingScreen';
 import VoiceAssistant from '@/components/VoiceAssistant';
@@ -18,9 +18,9 @@ const Index = () => {
           <StartHero key="hero" />
         ) : (
           <div key="app" className="w-full h-screen">
-            {/* 3D Map */}
-            <Suspense fallback={<LoadingScreen message="جاري تحميل الخريطة التفاعلية..." />}>
-              <Map3D />
+            {/* Real Arab World Map */}
+            <Suspense fallback={<LoadingScreen message="جاري تحميل خريطة الوطن العربي..." />}>
+              <RealMapArab />
             </Suspense>
             
             {/* Country Sidebar */}

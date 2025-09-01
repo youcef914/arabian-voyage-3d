@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@200;300;400;500;700;900&family=Amiri:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+@import 'leaflet/dist/leaflet.css';
 
 @tailwind base;
 @tailwind components;
@@ -153,5 +154,46 @@ All colors MUST be HSL for proper theme support
 
   .glow-border {
     box-shadow: 0 0 0 1px hsl(var(--secondary) / 0.3), var(--shadow-glow);
+  }
+
+  /* Leaflet customizations for Arabian theme */
+  .leaflet-container {
+    font-family: 'Tajawal', sans-serif;
+  }
+
+  .custom-tooltip {
+    background: var(--gradient-glass) !important;
+    backdrop-filter: blur(20px) !important;
+    border: 1px solid hsla(var(--border), 0.2) !important;
+    border-radius: 0.5rem !important;
+    box-shadow: var(--shadow-elegant) !important;
+    color: hsl(var(--foreground)) !important;
+    font-size: 0.875rem !important;
+    padding: 0.75rem !important;
+  }
+
+  .custom-tooltip::before {
+    border-top-color: hsla(var(--secondary), 0.2) !important;
+  }
+
+  .leaflet-popup-content-wrapper {
+    background: var(--gradient-glass) !important;
+    backdrop-filter: blur(20px) !important;
+    border: 1px solid hsla(var(--border), 0.2) !important;
+    border-radius: 0.75rem !important;
+    box-shadow: var(--shadow-elegant) !important;
+    color: hsl(var(--foreground)) !important;
+  }
+
+  .leaflet-popup-tip {
+    background: hsla(var(--secondary), 0.2) !important;
+    border: 1px solid hsla(var(--border), 0.2) !important;
+  }
+
+  /* Hide Leaflet attribution on small screens */
+  @media (max-width: 640px) {
+    .leaflet-control-attribution {
+      display: none;
+    }
   }
 }
